@@ -6,7 +6,7 @@ def xml_from_string(xmlstr):
     containing a valid XML document.
     """
     try:
-        return etree.XML(str(xmlstr).strip())
+        return etree.fromstring(xmlstr.strip().encode("utf-8"))
     except etree.XMLSyntaxError:
         return None
 
